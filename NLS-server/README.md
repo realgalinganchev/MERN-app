@@ -1,7 +1,7 @@
 # Fetch Data INATHOR
 
 This web application was designed as an example of how to fetch data using Facebook's Graph API, using JavaScript (React JS).
-The Main objective of this, is to become into a big project that gets data from Facebook and Twitter Mainly.
+The Main objective of this, is to become into a big project that gets data from Facebook mainly.
 
 
 ## Run this project
