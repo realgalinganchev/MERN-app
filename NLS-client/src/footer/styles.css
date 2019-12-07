@@ -1,0 +1,32 @@
+#footer {
+    position: fixed;
+    bottom: 0 ;
+    width: 100%;
+    clear: both;
+    height: 40px;
+    margin-top: auto;
+}
+#footer a{
+    margin : 0 0.2em;
+}
+
+.list-item a{
+        margin : 0 1em;
+        text-decoration: none;
+    }
+#footer .navButtonsStyle{
+    color: #800080; 
+
+}
+#footer-right{
+    float: right;
+}
+#footer-right a{
+    text-decoration: none;
+}
+.footer-left{
+    float: left;
+}
+.footer-left a{
+    text-decoration: none;
+}

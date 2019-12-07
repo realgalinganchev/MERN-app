@@ -1,0 +1,12 @@
+#more-details {
+    z-index: 100;
+    position: absolute;
+    top: 1.5em;
+    left: 0.6em;
+}
+.wrapper{
+    position: relative;
+}
+.fb-page {
+    background-image: url(/src/images/background2.jpg);
+}
