@@ -1,34 +1,37 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
-// import './App.css';
+// import addToFavourites from '../utils/services/add-to-favourites'
+// import { userInfo } from 'os';
+import { getSession } from '../utils/get-session'
 
 class Favourites extends Component {
-   constructor(){
-       super();
-       this.state ={favourites: []};
-   }
-   componentDidMount() {
-          fetch('http://localhost:3001/api/favourites')
+    constructor() {
+        super();
+        this.state = { favourites: [] };
+        this.id = getSession().id;
+    }
+
+    componentDidMount() {
+        fetch(`http://localhost:3001/api/user/${this.id}`, {credentials : "include"})
             .then(res => {
-                //console.log(res);
                 return res.json()
-             })
-            .then(favourites => { 
-                //console.log(users); 
-                this.setState({ favourites })
-             });
-         }
-   render() {
+            })
+            .then(user => {
+               // console.log(user[0].favourites);
+                this.setState({ favourites : user[0].favourites })
+            });
+    }
+
+    render() {
         return (
             <div>
-        
+
                 {this.state.favourites.map(favourites =>
-                <div key={favourites._id}>Venue: {favourites.venue} User: {favourites.creator}</div>
-              )}
+                    <div key={favourites._id}>  Venues: {favourites.venue}  </div>
+                )}
             </div>
         );
     }
-}export default Favourites;
+} export default Favourites;
 
 
 

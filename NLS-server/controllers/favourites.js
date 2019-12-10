@@ -10,9 +10,9 @@ module.exports = {
                     return {
                         venue: element.venue,
                         _id: element._id,
-                        creator: element.author.username,
+                        author: element.author.username,
                     }
-                    
+
                 })
                 res.send(data)
 
@@ -47,7 +47,7 @@ module.exports = {
 
     delete: (req, res, next) => {
         const id = req.params.id;
-        models.Favourite.deleteOne({ _id: id })
+        models.Favourites.deleteOne({ _id: id })
             .then((removedFavourites) => res.send(removedFavourites))
             .catch(next)
     }

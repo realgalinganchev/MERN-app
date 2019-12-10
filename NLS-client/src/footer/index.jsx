@@ -8,13 +8,17 @@ function Footer() {
     return (
         <div id="footer" className="w3-black ">
             <div className="footer-left">
-                <a className="navButtonsStyle" href="/privacy-policy">Privacy Policy</a>
+                <a className="navButtonsStyle" href="/privacy-policy">    Privacy Policy</a>
 
             </div>
             <div className="footer-left">
                 
-                <a className="navButtonsStyle" href="/terms-and-conditions">Terms and conditions</a>
+                <a className="navButtonsStyle" href="/terms-and-conditions">   Terms and conditions</a>
             </div>
+            <div className="footer-left">
+                
+            <a className="navButtonsStyle" href="/about">   About</a>
+        </div>
             <div id="footer-right">
                 <a className="navButtonsStyle" href="https://twitter.com/rlgalinganchev/">  <i className="fa fa-twitter"></i></a>
                 <a className="navButtonsStyle" href="https://www.instagram.com/realgalinganchev/">  <i className="fa fa-instagram"></i></a>

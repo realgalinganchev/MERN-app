@@ -14,7 +14,9 @@ import NotFound from '../common/notFound';
 import About from '../common/about'
 import PrivacyPolicy from '../common/privacy-policy'
 import TermsAndConditions from '../common/terms-and-conditions'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import User from '../user'
+import {getSession} from '../utils/get-session'
 
 class App extends Component {
   constructor(props) {
@@ -35,8 +37,24 @@ class App extends Component {
         <Header />
         <div className="App">
           <Switch>
+          
+            
+            <Route path="/favourites" render ={()=>(
+              getSession() ?(
+                <Route path="/favourites" component={Favourites} />
+              ) : (
+                <Redirect to="/login"/>
+              )
+            )}/>
+
+            <Route path="/user" render ={()=>(
+              getSession() ?(
+                <Route path="/user" component={User}/>
+              ) : (
+                <Redirect to="/login"/>
+              )
+            )}/>
             <Route path="/" exact component={VenueCaroussel} />
-            <Route path="/favourites" component={Favourites} />
             <Route path="/login" component={Login} />
             <Route path="/logout" component={Logout} />
             <Route path="/register" component={Register} />

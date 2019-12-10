@@ -4,6 +4,7 @@ const { auth } = require('../utils');
 
 router.get('/', controllers.favourites.get);
 
+// Auth middleware
 router.post('/', auth(), controllers.favourites.post);
 
 router.put('/:id', auth(), controllers.favourites.put);

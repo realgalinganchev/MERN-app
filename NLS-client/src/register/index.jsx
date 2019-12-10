@@ -11,8 +11,9 @@ const Register = () => {
     const history = useHistory();
     const onSubmit = (values) => {
         UserService.register({ username: values.username, password: values.password, email: values.email}).then((user) => {
-            console.log(user);
-            history.push('/');
+         console.log(user);
+            history.push('/login');
+            // window.location.reload();
         }).catch(err => {
             console.log(err)
         })

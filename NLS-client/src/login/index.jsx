@@ -17,6 +17,7 @@ const Login = () => {
     UserService.login(values).then((data) => {
       console.log(data);
       history.push('/');
+      window.location.reload();
     }).catch(err=>console.log(err))
 
 
@@ -64,7 +65,7 @@ const Login = () => {
             </div>
             <div>
               <p className="alreadyUser"> Don't have an account yet? Then just
-              <Link className="navButtonsStyle"to='/register'>REGISTER for FREE!</Link>
+              <Link className="navButtonsStyle"to='/register'> register here!</Link>
         </p>
             </div>
             <pre>{JSON.stringify(values, 0, 2)}</pre>
