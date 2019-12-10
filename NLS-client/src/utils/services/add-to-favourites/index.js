@@ -1,28 +1,19 @@
 
-
+import { getSession } from '../../get-session'
 
 const AddToFavourites = {
-    get: function () {
 
-        return fetch(`http://localhost:3001/api/favourites`, {
-            method: 'GET',
+
+    updateFavourites: function (data) {
+        const id = getSession().id;
+        return fetch(`http://localhost:3001/api/user/${id}`, {
+            body: JSON.stringify(data),
+            method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
             },
             credentials: 'include'
-        }).then(res => res.status);
-    },
-    
-    post: function (data) {
-      return fetch(`http://localhost:3001/api/user`, {
-        body: JSON.stringify(data),
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json'
-        },
-        credentials: 'include'
-      }).then(res => res.status === 200 ? res.json() : Promise.reject(res.status))
+        }).then(res => res.status === 200 ? res.json() : Promise.reject(res.status))
     }
-}
- 
+};
 export default AddToFavourites;

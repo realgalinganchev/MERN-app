@@ -11,7 +11,7 @@ module.exports = {
     getOne: (req, res, next) => {
         const id = req.params.id;
 
-        models.User.find({ _id: id }).populate('favourites')
+        models.User.find({ _id: id })
             .then((user) => res.send(user))
             .catch(next)
     },
@@ -55,8 +55,9 @@ module.exports = {
 
     put: (req, res, next) => {
         const id = req.params.id;
-        const { username, password } = req.body;
-        models.User.update({ _id: id }, { username, password })
+        const { fbUrl } = req.body;
+        console.log(fbUrl);
+        models.User.findOneAndUpdate({  _id: id  }, { $push: { favourites: fbUrl } }, { new: true })
             .then((updatedUser) => res.send(updatedUser))
             .catch(next)
     },

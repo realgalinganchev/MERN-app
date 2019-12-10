@@ -23,7 +23,7 @@ const userSchema = new Schema({
         required: 'Please enter your email'
     },
 
-    favourites: [{ type: ObjectId, ref: "Favourites" }]
+    favourites: [{ type: String }]
 
 });
 
@@ -34,7 +34,10 @@ userSchema.methods = {
     }
 
 };
-
+userSchema.pre('save', function (next) {
+    this.favourites = _.unique(this.favourites);
+    next();
+});
 userSchema.pre('save', function (next) {
     if (this.isModified('password')) {
         bcrypt.genSalt(saltRounds, (err, salt) => {

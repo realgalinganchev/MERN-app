@@ -27,7 +27,7 @@ module.exports = {
         models.Favourites.create({ venue, author: _id })
             .then((createdFavourites) => {
                 return Promise.all([
-                    models.User.updateOne({ _id }, { $push: { favourites: createdFavourites } }),
+                    models.User.updateOne({ _id }, { $push: { favourites: createdFavourites } }, { new: true }),
                     models.Favourites.findOne({ _id: createdFavourites._id })
                 ]);
             })

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 // import addToFavourites from '../utils/services/add-to-favourites'
 // import { userInfo } from 'os';
 import { getSession } from '../utils/get-session'
+//import PluginGenerator from '../utils/plugin-generator'
+import PluginGeneratorFavourites from '../utils/plugin-generator-favourites'
 
 class Favourites extends Component {
     constructor() {
@@ -11,32 +13,35 @@ class Favourites extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:3001/api/user/${this.id}`, {credentials : "include"})
+        fetch(`http://localhost:3001/api/user/${this.id}`, { credentials: "include" })
             .then(res => {
                 return res.json()
             })
             .then(user => {
-               // console.log(user[0].favourites);
-                this.setState({ favourites : user[0].favourites })
+                console.log(user[0].favourites)
+                this.setState({ favourites: user[0].favourites })
+
             });
     }
 
     render() {
         return (
-            <div>
 
-                {this.state.favourites.map(favourites =>
-                    <div key={favourites._id}>  Venues: {favourites.venue}  </div>
-                )}
+            <div>
+                
+                {this.state.favourites.map((fbUrl, i) => <PluginGeneratorFavourites fbUrl={fbUrl} key={i} />)}
+
+
             </div>
-        );
+        )
     }
 } export default Favourites;
 
+//        {fbUrls.map((fbUrl, i) => <PluginGenerator fbUrl={fbUrl} title={titles[i]} key={i} />)}
 
-
-
-
+// {this.state.favourites.map(favourites =>
+//     {favourites.map((favourites.venue, i) => <PluginGenerator fbUrl={favourites.venue} title={titles[i]} key={i} />)}
+// <div key={favourites._id}>  Venues: {favourites.venue}  </div>
 
 
 
