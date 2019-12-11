@@ -34,10 +34,10 @@ userSchema.methods = {
     }
 
 };
-userSchema.pre('save', function (next) {
-    this.favourites = _.unique(this.favourites);
-    next();
-});
+// userSchema.pre('save', function (next) {
+//     this.favourites = _.unique(this.favourites);
+//     next();
+// });
 userSchema.pre('save', function (next) {
     if (this.isModified('password')) {
         bcrypt.genSalt(saltRounds, (err, salt) => {

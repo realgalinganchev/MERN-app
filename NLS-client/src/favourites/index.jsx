@@ -1,60 +1,53 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 // import addToFavourites from '../utils/services/add-to-favourites'
-// import { userInfo } from 'os';
 import { getSession } from '../utils/get-session'
-//import PluginGenerator from '../utils/plugin-generator'
-import PluginGeneratorFavourites from '../utils/plugin-generator-favourites'
+//import PluginGeneratorFavourites from '../utils/plugin-generator-favourites'
 
-class Favourites extends Component {
-    constructor() {
-        super();
-        this.state = { favourites: [] };
-        this.id = getSession().id;
-    }
+const Favourites = () => {
 
-    componentDidMount() {
-        fetch(`http://localhost:3001/api/user/${this.id}`, { credentials: "include" })
+    let [favourites, setFavourites] = useState(null);
+    const id = getSession().id;
+
+    useEffect(() => {
+        fetch(`http://localhost:3001/api/user/${id}`, { credentials: "include" })
             .then(res => {
                 return res.json()
             })
             .then(user => {
-                console.log(user[0].favourites)
-                this.setState({ favourites: user[0].favourites })
-
+                setFavourites(user[0].favourites)
             });
-    }
 
-    render() {
-        return (
 
+    }, [])
+    console.log(favourites)
+    return (
+        
+        favourites ?
             <div>
-                
-                {this.state.favourites.map((fbUrl, i) => <PluginGeneratorFavourites fbUrl={fbUrl} key={i} />)}
+                {favourites.map((fbUrl, i) => <IFrameGenerator fbUrl={fbUrl} key={i} />)}
+            </div> :
+            <div>Loading...</div>
 
 
-            </div>
-        )
-    }
-} export default Favourites;
+    )
+}
 
-//        {fbUrls.map((fbUrl, i) => <PluginGenerator fbUrl={fbUrl} title={titles[i]} key={i} />)}
+export default Favourites;
 
-// {this.state.favourites.map(favourites =>
-//     {favourites.map((favourites.venue, i) => <PluginGenerator fbUrl={favourites.venue} title={titles[i]} key={i} />)}
-// <div key={favourites._id}>  Venues: {favourites.venue}  </div>
+const IFrameGenerator = ({ fbUrl }) => {
+    const name = fbUrl.slice(25);
+    console.log(name);
+    return (<iframe title={name} src={`https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F${name}&tabs=events&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1437988429703898`} width="340" height="500" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>)
+}
+// const iFrameGenerator = ({fbUrl}) => {
+// return (<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbarpetak&tabs=events&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1437988429703898" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>)
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
+// favourites ?
+// <div>
+//     {favourites.map((fbUrl, i) => <iFrameGenerator fbUrl={fbUrl} key={i} />)}
+// </div> :
+// <div>Loading...</div>
 
 
 
@@ -66,61 +59,35 @@ class Favourites extends Component {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-// import './styles.css'
-// import postService from './../utils/services/post-service'
-
-
-// class Profile extends React.Component {
-//     state = {
-//         users: []
-//     };
+// class Favourites extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = { favourites: [] };
+//         this.id = getSession().id;
+//         this.counter = 0;
+//     }
 
 //     componentDidMount() {
-//         postService.load().then(favourites => {
-//             this.setState({ favourites });
-//         })
-//     }
-//     render() {
-//         const { users } = this.state;
-//         //console.log(favourites);
 
-//         return <div>
-//             {users}
+//         fetch(`http://localhost:3001/api/user/${this.id}`, { credentials: "include" })
+//             .then(res => {
+//                 return res.json()
+//             })
+//             .then(user => {
+//                 this.setState({ favourites: user[0].favourites })
+//             });
+
+//     }
+
+
+
+// render() {
+
+//     return (
+//         <div>
+//             {this.state.favourites.map((fbUrl, i) => <PluginGeneratorFavourites fbUrl={fbUrl} key={i} />)}
 //         </div>
-
-//     }
+//     )
 // }
+// } export default Favourites;
 
-// export default Profile;
-
-// export default function Profile(){
-//     return <div>
-//         Profile 
-//     </div>
-// }
-
-// {posts.map((post) => {
-//     <Post key={post.id} imageUrl="" imageAlt="alt" author="userId">{post.body}</Post>
-// })}
-
-// const { favourites } = this.state;
-
-// return favourites ? <div>
-// {favourites.map((favourite) => 
-//       <div key={favourite._id} creator={favourite.creator}>{favourite.body}</div>
-//     )}
-// </div> : <div>Loading...</div>

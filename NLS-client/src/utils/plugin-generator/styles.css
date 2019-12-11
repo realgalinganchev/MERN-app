@@ -10,11 +10,11 @@
 .fb-page {
     background-image: url(/src/images/background2.jpg);
 }
-#add-button{
+.add-button{
     margin-left: 204px;
     
 }
-#add-button button{
+.add-button button{
     background-color: rgba(255,255,255,0);
     color:white;
 }

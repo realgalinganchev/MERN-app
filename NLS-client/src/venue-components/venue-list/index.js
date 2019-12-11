@@ -15,25 +15,6 @@ const renderVenues = (venues) => {
     })
 }
 
-
-// const VenueList = ({ limit }) =>{
-//     const {venues,setVenues} = React.useState(null);
-
-//     React.useEffect{()=>{
-//         renderVenues.load(null, limit).then(venues => {
-//             setVenues(venues);
-//         });
-//     },[limit]};
-
-//     return (
-//                     <Fragment>
-//                         <div>
-//                             {renderVenues(data)}
-//                         </div>
-//                     </Fragment>
-//                 )
-// }
-
 class VenueList extends React.Component {
 
     render() {

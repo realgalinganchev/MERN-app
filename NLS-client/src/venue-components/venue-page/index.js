@@ -1,25 +1,34 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import VenueData from '../venue-data'
-import PluginGenerator from '../../utils/plugin-generator'
-import VenueCaroussel from '../venue-caroussel/'
+import GoToVenue from '../../utils/services/go-to-venue'
 
-// useEffect hook of venue
+
 const VenuePage = (props) => {
 
-  let venue = VenueData.filter(item => {
-    return item.id === props.match.params.id
-  })[0]
+  let [currentVenue , setCurrentVenue] = useState(null);
+  const id = props.match.params.id;
+
+  useEffect( () =>{
+    GoToVenue.showVenue({ id }).then((venue) => {
+      setCurrentVenue(venue[0]) ;
+      console.log(venue[0])
+    }).catch(err => console.log(err))
+  }, [id])
+  console.log(currentVenue)
 
   return (
+    currentVenue ?
     <Fragment>
-        
-        <VenueCaroussel><PluginGenerator fbUrl={venue.fbUrl} title={venue.title}/></VenueCaroussel>
-      <div>{venue.brand} {venue.title}</div>
-      <div>{venue.price}</div>
-      <Link to="/">Go back to homepage</Link>
-    </Fragment>
+      <div>name :{currentVenue.name}</div>
+      <div>location :{currentVenue.location}</div>
+      <div>description :{currentVenue.description}</div>
 
+      <Link to="/">Go back home</Link>
+    </Fragment> :
+    <div>Loading...</div>
   )
+
 }
 export default VenuePage
+
+

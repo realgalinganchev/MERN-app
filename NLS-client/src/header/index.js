@@ -15,8 +15,9 @@ class Header extends React.Component {
                 <nav id="header" className="w3-center w3-black w3-xlarge">
 
                     <ul className="list-item">
-                        <Link className="navButtonsStyle" to='/'>Venues</Link>
+                        <Link className="navButtonsStyle" to='/'>Home</Link>
                         <Link className="navButtonsStyle" to='/favourites'>Favourites</Link>
+                        <Link className="navButtonsStyle" to='/venues'>Venues</Link>
 
                         <Link className="navButtonsStyle" to='/logout'>Logout</Link>
 
