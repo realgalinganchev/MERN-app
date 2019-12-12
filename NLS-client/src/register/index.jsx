@@ -3,7 +3,6 @@ import Styles from './Styles'
 import { Form } from 'react-final-form'
 import { Field } from 'react-final-form-html5-validation'
 import { useHistory } from 'react-router-dom'
-//import {StoreContext} from '../store'
 import UserService from '../utils/services/user-service'
 
 
@@ -11,11 +10,10 @@ const Register = () => {
     const history = useHistory();
     const onSubmit = (values) => {
         UserService.register({ username: values.username, password: values.password, email: values.email}).then((user) => {
-         console.log(user);
+         //console.log(user);
             history.push('/login');
-            // window.location.reload();
         }).catch(err => {
-            console.log(err)
+            //console.log(err)
         })
 
 
@@ -88,7 +86,7 @@ const Register = () => {
                                 Register
             </button>
                         </div>
-                        <pre>{JSON.stringify(values, 0, 2)}</pre>
+
                     </form>
                 )}
             />
@@ -100,7 +98,4 @@ const Register = () => {
 
 export default Register
 
-// <div>
-//                         <label>Feedback</label>
-//                         <Field name="notes" component="textarea" placeholder="We are constantly trying to impove our customer's experience. Feel free to share your ideas here! " />
-//                     </div>
+// <pre>{JSON.stringify(values, 0, 2)}</pre>

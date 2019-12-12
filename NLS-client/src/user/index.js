@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import addToFavourites from '../utils/services/add-to-favourites'
-// import { userInfo } from 'os';
 
 class User extends Component {
     constructor() {

@@ -5,7 +5,7 @@ export default [
         price: "$",
         brand: "bar ",
         image: "https://media-cdn.tripadvisor.com/media/photo-s/18/7b/b3/ca/bar-friday-full-house.jpg",
-        fbUrl: "https://www.facebook.com/barpetak/",
+        fbUrl: "https://www.facebook.com/barpetak",
     },
     {
         id: '2',
@@ -13,7 +13,7 @@ export default [
         price: "$$",
         brand: "club ",
         image: "https://scontent.fsof3-1.fna.fbcdn.net/v/t1.0-9/44243058_2171248689598334_2832942329449414656_o.jpg?_nc_cat=104&_nc_oc=AQljssGJnmRz4qJ68Hhh77W3B7X_kITad6zLT0GvOAB5-XnG5v9bu5tLBBtzIQQL0rg&_nc_ht=scontent.fsof3-1.fna&oh=632606554afe961172e54d00e59e826e&oe=5E410F43",
-        fbUrl: "https://www.facebook.com/execlub.bg/",
+        fbUrl: "https://www.facebook.com/execlub.bg",
     },
     {
         id: '3',
@@ -37,7 +37,7 @@ export default [
         price: "$$",
         brand: "club ",
         image: "https://goguide.bg/upload/articles/inner/151843971626993690_1552348621508553_4709883152916974315_n.jpg",
-        fbUrl: "https://www.facebook.com/clubterminal1/",
+        fbUrl: "https://www.facebook.com/clubterminal1",
     },
     // {
     //     id: '6',
@@ -53,7 +53,7 @@ export default [
         price: "$$",
         brand: "bar ",
         image: "https://media-cdn.tripadvisor.com/media/photo-s/0e/6c/c9/f3/some-people.jpg",
-        fbUrl: "https://www.facebook.com/SwitchBarSofia/",
+        fbUrl: "https://www.facebook.com/SwitchBarSofia",
     },
     {
         id: '8',
@@ -61,7 +61,7 @@ export default [
         price: "$$",
         brand: "",
         image: "https://www.sofialiveclub.com/gallery/2018/0308/images/16.jpg",
-        fbUrl: "https://www.facebook.com/SOFIALIVECLUBBG/",
+        fbUrl: "https://www.facebook.com/SOFIALIVECLUBBG",
     },
     // {
     //     id: '9',

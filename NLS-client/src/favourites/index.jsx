@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import addToFavourites from '../utils/services/add-to-favourites'
 import { getSession } from '../utils/get-session'
-//import PluginGeneratorFavourites from '../utils/plugin-generator-favourites'
 
 const Favourites = () => {
 
@@ -18,8 +16,8 @@ const Favourites = () => {
             });
 
 
-    }, [])
-    console.log(favourites)
+    }, [id])
+    //console.log(favourites)
     return (
         
         favourites ?
@@ -36,18 +34,10 @@ export default Favourites;
 
 const IFrameGenerator = ({ fbUrl }) => {
     const name = fbUrl.slice(25);
-    console.log(name);
+    //console.log(name);
     return (<iframe title={name} src={`https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F${name}&tabs=events&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1437988429703898`} width="340" height="500" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>)
 }
-// const iFrameGenerator = ({fbUrl}) => {
-// return (<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbarpetak&tabs=events&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1437988429703898" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>)
-// }
 
-// favourites ?
-// <div>
-//     {favourites.map((fbUrl, i) => <iFrameGenerator fbUrl={fbUrl} key={i} />)}
-// </div> :
-// <div>Loading...</div>
 
 
 

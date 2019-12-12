@@ -11,10 +11,10 @@ const VenuePage = (props) => {
   useEffect( () =>{
     GoToVenue.showVenue({ id }).then((venue) => {
       setCurrentVenue(venue[0]) ;
-      console.log(venue[0])
+      //console.log(venue[0])
     }).catch(err => console.log(err))
-  }, [id])
-  console.log(currentVenue)
+  }, [])
+  //console.log(currentVenue)
 
   return (
     currentVenue ?

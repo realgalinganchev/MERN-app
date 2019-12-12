@@ -7,7 +7,7 @@ const Logout = () => {
     const history = useHistory();
 
     services.logout().then((res) => {
-        console.log(res);
+        //console.log(res);
         logOut();
         history.push("/");
         window.location.reload();

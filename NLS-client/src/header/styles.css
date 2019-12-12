@@ -1,16 +1,14 @@
 
 #header {
-    /* position: fixed; */
     top : 0;
-width:100%;
+    width:100%;
     height: auto;
-
 }
     
 #header .navButtonsStyle{
     color: #800080; 
-
 }
+
 .list-item a{
     margin : 0 1em;
 }

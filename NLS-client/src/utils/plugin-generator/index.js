@@ -11,15 +11,17 @@ export default function PluginGenerator({ fbUrl, Title }) {
     const handleAddToFavourites = () => {
 
         AddToFavourites.updateFavourites({ fbUrl }).then((user) => {
-            console.log(user);
+            //console.log(user);
         }).catch(err => console.log(err))
     }
     const handleGoToVenue = () => {
 
         GoToVenue.goVenue({ fbUrl }).then((venue) => {
+            //console.log(fbUrl);
             let id = venue[0]._id;
+
             history.push(`/venues/${id}`);
-        }).catch(err => console.log(err))
+        }).catch(err => (err))
     }
 
     return (

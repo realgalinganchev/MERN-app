@@ -17,7 +17,7 @@ module.exports = (redirectAuthenticated = true) => {
                 models.User.findById(data.id)
                     .then((user) => {
                         req.user = user;
-                        console.log(user);
+                        //console.log(user);
                         next();
                     });
             })

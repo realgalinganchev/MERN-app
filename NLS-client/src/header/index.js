@@ -3,8 +3,6 @@ import './styles.css'
 import { Link } from 'react-router-dom';
 import { getSession } from '../utils/get-session'
 
-
-
 class Header extends React.Component {
 
 
@@ -17,10 +15,8 @@ class Header extends React.Component {
                     <ul className="list-item">
                         <Link className="navButtonsStyle" to='/'>Home</Link>
                         <Link className="navButtonsStyle" to='/favourites'>Favourites</Link>
-                        <Link className="navButtonsStyle" to='/venues'>Venues</Link>
 
                         <Link className="navButtonsStyle" to='/logout'>Logout</Link>
-
                     </ul>
                 </nav>
             )
@@ -43,11 +39,3 @@ class Header extends React.Component {
 }
 
 export default Header
-
-// <Link className="navButtonsStyle" to='/register'>Register</Link>
-// <Link className="navButtonsStyle" to='/about'>About</Link>
-//                    <Link className="navButtonsStyle" to='/favourites'>Favourites</Link>
-// <Link className="navButtonsStyle" to='/favourites'>Favourites</Link>
-// <Link className="navButtonsStyle" to='/user'>Users</Link>
-// <Link className="navButtonsStyle" to='/logout'>Logout</Link>
-//                        <Link className="navButtonsStyle" to='/user'>Users</Link>
