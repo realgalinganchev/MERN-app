@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 import UserService from '../utils/services/user-service'
 import { Link } from 'react-router-dom';
 
-
+//import Image from './background3.jpg';
 
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
   }
   return (
     <Styles>
-      <Form
+      <Form 
         onSubmit={onSubmit}
         render={({ handleSubmit, reset, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-
+import Image from './background3.jpg';
 const btn = (light, dark) => css`
   white-space: nowrap;
   display: inline-block;
@@ -36,6 +36,14 @@ const btnDanger = btn('#e27c79', '#c9302c')
 
 export default styled.div`
   font-family: sans-serif;
+  height:100%;
+  background-image: url(${Image});
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom:33em;
+  padding-top:4em;
+
 
   h1 {
     text-align: center;
@@ -61,8 +69,11 @@ export default styled.div`
   p {
     max-width: 500px;
     margin: 10px auto;
+    color:white;
     & > a {
       display: inline;
+      color:red;
+
     }
   }
 
@@ -77,12 +88,13 @@ export default styled.div`
   div.form {
     text-align: left;
     max-width: 600px;
-    margin: 10px auto;
-    border: 1px solid #ccc;
+    margin: 0 auto;
+    border: none;
     padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 3px;
     position: relative;
+    background-color:rgba(0, 0, 0, 0);
+
 
     & > div {
       display: flex;
@@ -96,7 +108,7 @@ export default styled.div`
         border-color: turquoise;
       }
       & > label {
-        color: #333;
+        color: white;
         width: 110px;
         min-width: 60px;
         font-size: 1em;

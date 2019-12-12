@@ -56,7 +56,7 @@ module.exports = {
     put: (req, res, next) => {
         const id = req.params.id;
         const { fbUrl } = req.body;
-        console.log(fbUrl);
+        //console.log(fbUrl);
         models.User.findOneAndUpdate({  _id: id  }, { $push: { favourites: fbUrl } }, { new: true })
             .then((updatedUser) => res.send(updatedUser))
             .catch(next)

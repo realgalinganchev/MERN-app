@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getSession } from '../utils/get-session'
 import IFrameGenerator from '../utils/i-frame-generator'
-
+import './styles.css'
+import Image from './background2.jpg';
 const Favourites = () => {
 
     let [favourites, setFavourites] = useState(null);
@@ -19,13 +20,15 @@ const Favourites = () => {
 
     }, [id])
     return (
-        
-        favourites ?
-            <div id="frame">
-
-                {favourites.map((fbUrl, i) => <IFrameGenerator fbUrl={fbUrl} key={i} />)}
-            </div> :
-            <div>Loading...</div>
+        <div className="favourites" style={{ backgroundImage: `url(${Image})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'repeat' }}>
+            {
+                favourites ?
+                    <div className="frame">
+                        {favourites.map((fbUrl, i) => <IFrameGenerator fbUrl={fbUrl} key={i} />)}
+                    </div> :
+                    <div>Loading...</div>
+            }
+        </div>
 
     )
 }
