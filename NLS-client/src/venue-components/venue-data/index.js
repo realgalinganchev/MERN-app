@@ -95,4 +95,13 @@ export default [
     //     image: "https://scontent.fsof3-1.fna.fbcdn.net/v/t1.0-9/74638424_1505428286261648_5331212350403903488_o.jpg?_nc_cat=101&_nc_oc=AQl82NDVdti8J13g-kfAAS9bUCd7lAW0KVIroysj3RWEjQ7wtOzI0vIyGKL4Bum5HSo&_nc_ht=scontent.fsof3-1.fna&oh=92d9c6a41308cd2e2f3b87229ee2fcbe&oe=5E4094BB",
     //     fbUrl: "https://www.facebook.com/Club33Sofia/",
     // },
+        //     id: '12',
+    //     title: "33",
+    //     price: "$$",
+    //     brand: "club ",
+    //     image: "https://scontent.fsof3-1.fna.fbcdn.net/v/t1.0-9/74638424_1505428286261648_5331212350403903488_o.jpg?_nc_cat=101&_nc_oc=AQl82NDVdti8J13g-kfAAS9bUCd7lAW0KVIroysj3RWEjQ7wtOzI0vIyGKL4Bum5HSo&_nc_ht=scontent.fsof3-1.fna&oh=92d9c6a41308cd2e2f3b87229ee2fcbe&oe=5E4094BB",
+    //     fbUrl: "https://www.facebook.com/Club33Sofia/",
+    // },
+    
+    
 ]
