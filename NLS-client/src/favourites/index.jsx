@@ -18,15 +18,14 @@ const Favourites = () => {
 
 
     }, [id])
-    //console.log(favourites)
     return (
         
         favourites ?
-            <div>
+            <div id="frame">
+
                 {favourites.map((fbUrl, i) => <IFrameGenerator fbUrl={fbUrl} key={i} />)}
             </div> :
             <div>Loading...</div>
-
 
     )
 }

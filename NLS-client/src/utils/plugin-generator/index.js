@@ -10,7 +10,6 @@ import { getSession } from '../../utils/get-session'
 
 export default function PluginGenerator({ fbUrl }) {
     const id = getSession();
-    console.log(id)
     const history = useHistory();
     const handleAddToFavourites = () => {
 
@@ -27,6 +26,7 @@ export default function PluginGenerator({ fbUrl }) {
             history.push(`/venues/${id}`);
         }).catch(err => (err))
     }
+    
 
     return (
 
