@@ -13,7 +13,7 @@ const VenuePage = (props) => {
       setCurrentVenue(venue[0]) ;
       //console.log(venue[0])
     }).catch(err => console.log(err))
-  }, [])
+  }, [id])
   //console.log(currentVenue)
 
   return (

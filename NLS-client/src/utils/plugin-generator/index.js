@@ -6,10 +6,11 @@ import AddToFavourites from '../../utils/services/add-to-favourites'
 import GoToVenue from '../../utils/services/go-to-venue'
 import { useHistory } from 'react-router-dom';
 import IFrameGenerator from '../i-frame-generator'
-
+import { getSession } from '../../utils/get-session'
 
 export default function PluginGenerator({ fbUrl }) {
-
+    const id = getSession();
+    console.log(id)
     const history = useHistory();
     const handleAddToFavourites = () => {
 
@@ -30,9 +31,10 @@ export default function PluginGenerator({ fbUrl }) {
     return (
 
         <div className="wrapper" style={{ backgroundImage: `url(${Image})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-            <div className="add-button">
-                <button onClick={handleAddToFavourites}>Add to Favourites</button>
-            </div>
+            {id ? <div className="add-button">
+            <button onClick={handleAddToFavourites}>Add to Favourites</button>
+        </div>: <div></div>}
+            
             <div className="add-button" id="goToVenue">
                 <button onClick={handleGoToVenue}>Go to venue</button>
             </div>
@@ -44,6 +46,8 @@ export default function PluginGenerator({ fbUrl }) {
     );
 }
 
+
+//style={{display: "none"}}
 // <div className="fb-page" data-href={fbUrl}
 // data-tabs="events" data-width="500" data-height="700" data-small-header="false"
 // data-adapt-container-width="true" data-hide-cover="false"

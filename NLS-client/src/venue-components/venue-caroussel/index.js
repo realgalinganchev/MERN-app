@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Slider from "react-slick"
 import VenueData from '../venue-data'
 import PluginGenerator from '../../utils/plugin-generator'

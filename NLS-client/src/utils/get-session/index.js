@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'
 export const getSession = () => {
     const jwt = Cookies.get('x-auth-token');
       //console.log(jwt);
-    let session
+    let session = null;
     try {
         if (jwt) {
             const base64Url = jwt.split('.')[1]
