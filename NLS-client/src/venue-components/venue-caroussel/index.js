@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from "react-slick"
 import VenueData from '../venue-data'
 import PluginGenerator from '../../utils/plugin-generator'
+import IFrameGenerator from '../../utils/i-frame-generator'
 import './styles.css'
 
 
