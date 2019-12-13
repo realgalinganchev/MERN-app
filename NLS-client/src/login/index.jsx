@@ -17,16 +17,17 @@ const Login = () => {
       //console.log(data);
       history.push('/');
       window.location.reload();
-    }).catch(err=>console.log(err))
+    }).catch(err => console.log(err))
 
 
   }
   return (
     <Styles>
-      <Form 
+      <Form
         onSubmit={onSubmit}
         render={({ handleSubmit, reset, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
+            <p>For more of our incredible features just sign in!</p>
             <div>
               <label>Username</label>
               <Field
@@ -64,8 +65,9 @@ const Login = () => {
             </div>
             <div>
               <p className="alreadyUser"> Don't have an account yet? Then just
-              <Link className="navButtonsStyle"to='/register'> register here!</Link>
-        </p>
+              <Link className="navButtonsStyle" to='/register'> register here</Link>
+
+              </p>
             </div>
 
           </form>

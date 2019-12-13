@@ -69,6 +69,7 @@ export default styled.div`
   p {
     max-width: 500px;
     margin: 10px auto;
+    margin-left: 182px;
     color:white;
     & > a {
       display: inline;
@@ -208,6 +209,7 @@ export default styled.div`
   }
   button {
     margin: 0 10px;
+    margin-left: 124px;
     &[type='submit'] {
       ${btnPrimary};
     }

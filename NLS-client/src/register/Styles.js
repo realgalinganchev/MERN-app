@@ -203,6 +203,7 @@ export default styled.div`
   }
   button {
     margin: 0 10px;
+    margin-left: 128px;
     &[type='submit'] {
       ${btnPrimary};
     }
