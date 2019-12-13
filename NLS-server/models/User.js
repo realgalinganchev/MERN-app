@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-
 const Schema = mongoose.Schema;
 const Model = mongoose.model;
 const { String, Number, Boolean, ObjectId } = Schema.Types;
@@ -20,10 +19,10 @@ const userSchema = new Schema({
     },
     email: {
         type: String,
-        required: 'Please enter your email'
+        required: true
     },
 
-    favourites: [{ type: String }]
+    favourites: [{ type: String, unique: true }],
 
 });
 
