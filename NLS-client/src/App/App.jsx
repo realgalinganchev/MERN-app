@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles.css';
 import VenueCaroussel from '../venue-components/venue-caroussel'
 import VenuePage from '../venue-components/venue-page'
 import Header from '../header'
@@ -13,7 +13,6 @@ import About from '../common/about'
 import PrivacyPolicy from '../common/privacy-policy'
 import TermsAndConditions from '../common/terms-and-conditions'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-import User from '../user'
 import { getSession } from '../utils/get-session'
 
 class App extends Component {
@@ -40,17 +39,10 @@ class App extends Component {
               getSession() ? (
                 <Route path="/favourites" component={Favourites} />
               ) : (<Redirect to="/login" />))} />
-            <Route path="/user" render={() => (
-              getSession() ? (
-                <Route path="/user" component={User} />
-              ) : (
-                  <Redirect to="/login" />
-                )
-            )} />
             <Route path="/" exact component={VenueCaroussel} />
+            <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
             <Route path="/logout" component={Logout} />
-            <Route path="/register" component={Register} />
             <Route path="/about" component={About} />
             <Route path="/privacy-policy" component={PrivacyPolicy} />
             <Route path="/terms-and-conditions" component={TermsAndConditions} />
@@ -66,3 +58,10 @@ class App extends Component {
 
 export default App;
 
+// <Route path="/user" render={() => (
+//   getSession() ? (
+//     <Route path="/user" component={User} />
+//   ) : (
+//       <Redirect to="/login" />
+//     )
+// )} />

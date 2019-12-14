@@ -22,7 +22,7 @@ const userSchema = new Schema({
         required: true
     },
 
-    favourites: [{ type: String, unique: true }],
+    favourites: [{ type: String }],
 
 });
 

@@ -59,7 +59,7 @@ module.exports = {
         //console.log(fbUrl);
         models.User.find({ _id: id })
             .then((user) => {
-                console.log(user)
+                //console.log(user)
                 if (user[0].favourites.includes(fbUrl)) {
                     res.status(304).send(user)
                     return;

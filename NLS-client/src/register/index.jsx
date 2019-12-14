@@ -5,18 +5,14 @@ import { Field } from 'react-final-form-html5-validation'
 import { useHistory } from 'react-router-dom'
 import UserService from '../utils/services/user-service'
 
-
 const Register = () => {
     const history = useHistory();
     const onSubmit = (values) => {
-        UserService.register({ username: values.username, password: values.password, email: values.email}).then((user) => {
-         //console.log(user);
+        UserService.register({ username: values.username, password: values.password, email: values.email }).then((user) => {
             history.push('/login');
         }).catch(err => {
-            //console.log(err)
+            console.log(err);
         })
-
-
     }
     return (
         <Styles>
@@ -80,22 +76,17 @@ const Register = () => {
                                 required
                             />
                         </div>
-
                         <div className="buttons">
                             <button type="submit" disabled={submitting}>
                                 Register
-            </button>
+                            </button>
                         </div>
-
                     </form>
                 )}
             />
         </Styles>
 
-
     )
 }
 
 export default Register
-
-// <pre>{JSON.stringify(values, 0, 2)}</pre>

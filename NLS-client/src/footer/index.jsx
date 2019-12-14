@@ -7,15 +7,12 @@ class Footer extends React.Component {
         return (
             <div id="footer" className="w3-black ">
                 <div className="footer-left">
-                <Link  className="navButtonsStyle" to="/privacy-policy">    Privacy Policy</Link>
-
+                    <Link className="navButtonsStyle" to="/privacy-policy">    Privacy Policy</Link>
                 </div>
                 <div className="footer-left">
-
                     <Link className="navButtonsStyle" to="/terms-and-conditions">   Terms and conditions</Link>
                 </div>
                 <div className="footer-left">
-
                     <Link className="navButtonsStyle" to="/about">   About</Link>
                 </div>
                 <div id="footer-right">
@@ -26,7 +23,6 @@ class Footer extends React.Component {
                     <a className="navButtonsStyle" href="https://www.linkedin.com/in/galin-ganchev-2888b1145/">  <i className="fa fa-linkedin"></i></a>
                 </div>
             </div>
-
         )
     }
 }

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Slider from "react-slick"
 import PluginGenerator from '../../utils/plugin-generator'
-
 import './styles.css'
 
 const VenueCaroussel = () => {
-  let [fbUrls, setFbUrls] = useState([]);
 
+  let [fbUrls, setFbUrls] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/venues`, { credentials: "include" })
