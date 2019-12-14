@@ -1,61 +1,47 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
-//import styled from 'styled-components'
+import VenueLocationGenerator from '../../utils/venue-location-generator'
+import styled from 'styled-components'
 import GoToVenue from '../../utils/services/go-to-venue'
 import './styles.css'
-// const VenueImage = ({ image, title }) => {
-//   return (
-//       <Image src={image} alt={title} />
-//   )
-// }
+
+const Image = styled.img`
+  width: 600px;
+`
 const VenuePage = (props) => {
 
-  let [currentVenue , setCurrentVenue] = useState(null);
+  let [currentVenue, setCurrentVenue] = useState(null);
   const id = props.match.params.id;
 
-  useEffect( () =>{
+  useEffect(() => {
     GoToVenue.showVenue({ id }).then((venue) => {
-      setCurrentVenue(venue[0]) ;
-      //console.log(venue[0])
+      setCurrentVenue(venue[0]);
     }).catch(err => console.log(err))
   }, [id])
-  //console.log(currentVenue)
 
   return (
     currentVenue ?
-    <Fragment>
-    
-      <div>name :{currentVenue.name}</div>
-      <div>location :{currentVenue.location}</div>
-      <div>description :{currentVenue.description}</div>
+      <div>
+        <Image src={currentVenue.img} alt={currentVenue.name} />       
+        <span><VenueLocationGenerator geoLocation={currentVenue.geoLocation} key={currentVenue.name}/></span>
+        <div>name :{currentVenue.name}</div>
+        <span>{currentVenue.description}</span>
 
-      <Link to="/">Go back home</Link>
-    </Fragment> :
-    <div>Loading...</div>
+        <Link to="/">Go back home</Link>
+      </div>
+      :
+      <div>Loading...</div>
   )
-
 }
-
-// const Image = styled.img`
-//   width: 500px;
-// `
 
 VenuePage.defaultProps = {
-    image: '',
-    title: 'Placeholder',
-    brand: '',
-    price: 0
+  name: '',
+  geoLocation: '',
+  description: '',
+  img: '',
 }
 
-VenuePage.propTypes = {
-    image: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    brand: PropTypes.string,
-    price: PropTypes.number.isRequired
-}
+
 
 export default VenuePage
 
-
-//<VenueImage image={image} title={title} />

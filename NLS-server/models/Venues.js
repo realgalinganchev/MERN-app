@@ -10,7 +10,7 @@ const venuesSchema = new Schema({
         required: true,
     },
 
-    location: {
+    geoLocation: {
         type: String,
         required: true,
     },

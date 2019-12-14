@@ -11,7 +11,7 @@ module.exports = {
                         _id: element._id,
                         description: element.description,
                         img: element.img,
-                        location: element.location,
+                        geoLocation: element.geoLocation,
                         fbUrl: element.fbUrl,
                     }
 
