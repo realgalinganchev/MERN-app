@@ -1,4 +1,8 @@
 #containerPrivacy {
-    width: auto;
-    height: auto;
-  }
+  line-height: 1;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: left;
+  padding-left: 8em;
+  padding-bottom: 0;
+}

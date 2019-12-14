@@ -8,7 +8,6 @@ import Favourites from '../favourites/index'
 import Login from '../login'
 import Logout from '../logout'
 import Register from '../register'
-import ErrorPage from '../utils/error-page'
 import NotFound from '../common/notFound';
 import About from '../common/about'
 import PrivacyPolicy from '../common/privacy-policy'
@@ -56,7 +55,6 @@ class App extends Component {
             <Route path="/privacy-policy" component={PrivacyPolicy} />
             <Route path="/terms-and-conditions" component={TermsAndConditions} />
             <Route path="/venues/:id" component={VenuePage} />
-            <Route component={ErrorPage} />
             <Route path='*' component={NotFound} />
           </Switch>
         </div>
