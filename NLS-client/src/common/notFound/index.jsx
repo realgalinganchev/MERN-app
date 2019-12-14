@@ -3,53 +3,12 @@ import './styles.css'
 import Image from '../../images/notFound.jpg';
 import Link from '../../Link'
 
-function NotFound() {
+export default function NotFound() {
     return (
-        <div className="notFound" style={{ backgroundImage: `url(${Image})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-
-            <p>                         .</p>
-            <p>.</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <h1>                          The party you are looking for is not here :(</h1>
-                    <Link id="goToHome" to="/">Go back to homepage</Link>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-            <p>                         .</p>
-
-
+        <div className="notFound" style={{ backgroundImage: `url(${Image})`, backgroundPosition: 'center', "min-height": "92vh", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+            <div>The party you are looking for is not here :(</div>
+            <Link id="goToHome" to="/">Go back to homepage</Link>
         </div>
     )
 }
 
-export default NotFound;

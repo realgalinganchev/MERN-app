@@ -2,8 +2,8 @@ import React from 'react';
 import './styles.css'
 import { Link } from 'react-router-dom';
 
-class Footer extends React.Component {
-    render() {
+const Footer = () =>  {
+
         return (
             <div id="footer" className="w3-black ">
                 <div className="footer-left">
@@ -24,7 +24,6 @@ class Footer extends React.Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default Footer  

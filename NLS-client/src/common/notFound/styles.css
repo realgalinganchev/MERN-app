@@ -1,6 +1,7 @@
-.notFound h1 {
+.notFound div {
     padding-left: 600px;
     color:white;
+    font-size: 40px;
 }
 .listItem a{
     padding-left: 850px;
