@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getSession } from '../utils/get-session'
 import IFrameGenerator from '../utils/i-frame-generator'
 import './styles.css'
-import Image from '../images/background2.jpg'
+import Image from '../images/disco.jpg'
 const Favourites = () => {
 
     let [favourites, setFavourites] = useState(null);
