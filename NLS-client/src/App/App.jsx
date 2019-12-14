@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './styles.css';
 import VenueCaroussel from '../venue-components/venue-caroussel'
 import VenuePage from '../venue-components/venue-page'
@@ -15,20 +15,10 @@ import TermsAndConditions from '../common/terms-and-conditions'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { getSession } from '../utils/get-session'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-    this.connecToServer = this.connecToServer.bind(this);
-  }
-  connecToServer() {
-    fetch('/');
-  }
-  componentDidMount() {
-    this.connecToServer();
-  }
+const App = () => {
 
-  render() {
+
+
     return (
       <BrowserRouter>
         <Header />
@@ -53,15 +43,8 @@ class App extends Component {
         <Footer />
       </BrowserRouter>
     );
-  }
+
 }
 
 export default App;
 
-// <Route path="/user" render={() => (
-//   getSession() ? (
-//     <Route path="/user" component={User} />
-//   ) : (
-//       <Redirect to="/login" />
-//     )
-// )} />

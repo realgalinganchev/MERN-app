@@ -20,7 +20,7 @@ const Favourites = () => {
 
     }, [id])
     return (
-        <div className="favourites" style={{ backgroundImage: `url(${Image})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'repeat' }}>
+        <div className="favourites" style={{ backgroundImage: `url(${Image})`, backgroundPosition: 'center', "min-height": "92vh",backgroundSize: 'contain', backgroundRepeat: 'repeat' }}>
             {
                 favourites ?
                     <div className="frame">
