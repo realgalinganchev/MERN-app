@@ -2,7 +2,7 @@
 import React from "react";
 import SliderLoader from "react-content-loader";
 
-const ContentLoader = (props) => {
+const ContentLoader = () => {
 
   return (
     <SliderLoader height="500">

@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import  './styles.css'
 import VenueCard from '../venue-card/'
-// import Header from '../../header'
 import logged from '../../logged'
 import data from '../venue-data'
 

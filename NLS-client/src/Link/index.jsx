@@ -1,10 +1,8 @@
 import React from 'react'
-import { Link as ReactRouterDomLink} from 'react-router-dom'
+import { Link as ReactRouterDomLink } from 'react-router-dom'
 
-function Link({ children, to }) {
+export default function Link({ children, to }) {
     return <li className="listItem">
         <ReactRouterDomLink to={to}>{children}</ReactRouterDomLink>
-     </li>
+    </li>
 }
-
-export default Link  

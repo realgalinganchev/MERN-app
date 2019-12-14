@@ -6,20 +6,14 @@ import { useHistory } from 'react-router-dom'
 import UserService from '../utils/services/user-service'
 import { Link } from 'react-router-dom';
 
-//import Image from './background3.jpg';
-
-
 const Login = () => {
 
   const history = useHistory();
   const onSubmit = (values) => {
     UserService.login(values).then((data) => {
-      //console.log(data);
       history.push('/');
       window.location.reload();
     }).catch(err => console.log(err))
-
-
   }
   return (
     <Styles>
@@ -78,5 +72,3 @@ const Login = () => {
 }
 
 export default Login
-
-//            <pre>{JSON.stringify(values, 0, 2)}</pre>

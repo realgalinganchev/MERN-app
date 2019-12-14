@@ -5,7 +5,6 @@ import services from '../utils/services/user-service';
 
 const Logout = () => {
     const history = useHistory();
-
     services.logout().then((res) => {
         logOut();
         history.push("/");

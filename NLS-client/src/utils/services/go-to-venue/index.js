@@ -2,7 +2,6 @@
 
 const GoToVenue = {
 
-///to be done
     goVenue: function (data) {
         
         return fetch(`http://localhost:3001/api/venues/fbUrl`, {

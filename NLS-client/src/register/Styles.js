@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
-import Image from './background3.jpg';
+import Image from '../images/background3.jpg';
+
 const btn = (light, dark) => css`
   white-space: nowrap;
   display: inline-block;
