@@ -11,7 +11,7 @@ const VenueLocationGenerator = ({ geoLocation }) => {
             <div id="logo">
                 <img src={logo} alt="loading..." />
             </div> : ''}
-            <iframe title={"someTitle"} onLoad={handleLoad} src={geoLocation} width="600" height="450" frameBorder="0" style={{border:"0"}} allowFullScreen=""></iframe>
+            <iframe title={"someTitle"} onLoad={handleLoad} src={geoLocation} width="500" height="200" frameBorder="0" style={{border:"0"}} allowFullScreen=""></iframe>
         
         </div>)
 }

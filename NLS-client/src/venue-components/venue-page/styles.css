@@ -31,3 +31,29 @@
   .venue-seconds {
     font-size: 12px;
   }
+
+#geo{
+  /* margin: 0 auto; */
+  text-align: center;
+}
+
+/* #headerName{
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 500;
+  font-style: oblique;
+  font-optical-sizing: 34;
+  color:black;
+} */
+
+#VenueDescription {
+  flex: 0 1 30%;  
+  text-align: center;
+  width: calc((100% /3 ) - 1em);
+  margin: 0 auto;
+  padding: 3%;
+  font-size: 20px;
+  background-color: purple;
+  opacity: 0.6  ;
+  box-shadow: grey 5px 5px 5px;
+}
