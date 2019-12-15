@@ -12,11 +12,10 @@ import Popup from "reactjs-popup";
 export default function PluginGenerator({ fbUrl }) {
     const id = getSession();
     const history = useHistory();
+
     const handleAddToFavourites = () => {
 
-        AddToFavourites.updateFavourites({ fbUrl }).then((user) => {
-            //console.log(user);
-        }).catch(err => console.log(err))
+        AddToFavourites.updateFavourites({ fbUrl }).catch(err => console.log(err))
     }
     const handleGoToVenue = () => {
 

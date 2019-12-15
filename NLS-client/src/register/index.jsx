@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Styles from './Styles'
 import { Form } from 'react-final-form'
 import { Field } from 'react-final-form-html5-validation'
 import { useHistory } from 'react-router-dom'
 import UserService from '../utils/services/user-service'
 
+
+
 const Register = () => {
+    const [stateErrors, setErrors] = useState(null);
     const history = useHistory();
     const onSubmit = (values) => {
         UserService.register({ username: values.username, password: values.password, email: values.email }).then((user) => {
             history.push('/login');
-        }).catch(err => {
-            console.log(err);
-        })
+        }).catch((err) => {
+            setErrors({ err });});
     }
     return (
         <Styles>
@@ -80,6 +82,7 @@ const Register = () => {
                             <button type="submit" disabled={submitting}>
                                 Register
                             </button>
+                            {stateErrors && (stateErrors.err === 500) && <span>Username may already been taken</span>}
                         </div>
                     </form>
                 )}

@@ -8,7 +8,7 @@ const userService = {
         'Content-type': 'application/json'
       },
       credentials: 'include'
-    }).then(res => res.json());
+    }).then(res => res.status === 200 ? res.json() : Promise.reject(res.status))
   },
 
   login: function (data) {

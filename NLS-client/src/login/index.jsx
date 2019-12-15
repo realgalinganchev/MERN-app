@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Styles from './Styles'
 import { Form } from 'react-final-form'
 import { Field } from 'react-final-form-html5-validation'
@@ -7,13 +7,14 @@ import UserService from '../utils/services/user-service'
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-
+  const [stateErrors, setErrors] = useState(null);
   const history = useHistory();
   const onSubmit = (values) => {
     UserService.login(values).then((data) => {
       history.push('/');
       window.location.reload();
-    }).catch(err => console.log(err))
+    }).catch((err) => {
+      setErrors({ err });});
   }
   return (
     <Styles>
@@ -56,6 +57,7 @@ const Login = () => {
               <button type="submit" disabled={submitting}>
                 Login
             </button>
+            {stateErrors && (stateErrors.err === 401) && <span>Invalid username or passowrd</span>}
             </div>
             <div>
               <p className="alreadyUser"> Don't have an account yet? Then just

@@ -13,7 +13,6 @@ const VenueCaroussel = () => {
       .then(data => setFbUrls(data.map(data => data.fbUrl)));
     let slickListDiv = document.getElementsByClassName('slick-list')[0]
     slickListDiv.addEventListener('wheel', event => {
-
       event.preventDefault()
       event.deltaY > 0 ? VenueCaroussel.slider.slickNext() : VenueCaroussel.slider.slickPrev()
     })
