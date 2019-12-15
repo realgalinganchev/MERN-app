@@ -7,7 +7,7 @@ import GoToVenue from '../../utils/services/go-to-venue'
 import { useHistory } from 'react-router-dom';
 import IFrameGenerator from '../i-frame-generator'
 import { getSession } from '../../utils/get-session'
-//import Popup from "reactjs-popup";
+import Popup from "reactjs-popup";
 
 export default function PluginGenerator({ fbUrl }) {
     const id = getSession();
@@ -27,20 +27,29 @@ export default function PluginGenerator({ fbUrl }) {
             history.push(`/venues/${id}`);
         }).catch(err => (err))
     }
-    // const contentStyle = {
-    //     background: "rgba(255,255,255,0)",
-    //     width: "0%",
-    //     border: "none",
-    //     height: "0px",
-    //     color: "white",
-    // };
+    const contentStyle = {
+        background: "rgba(255,255,255,0)",
+        width: "0%",
+        border: "none",
+        height: "0px",
+        color: "white",
+    };
 
     return (
 
         <div className="wrapper" style={{ backgroundImage: `url(${Image})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-            {id ? <div className="add-button">
-            <button onClick={handleAddToFavourites}>Add to Favourites</button>
-            </div> : <div></div>}
+            {id ? <Popup
+                
+                arrow={false}                                                              
+                offsetY={15}
+                offsetX={27}
+                contentStyle={contentStyle}
+                trigger={ <div className="add-button">
+                            <button onClick={handleAddToFavourites}>Add to Favourites</button>
+                            </div> }
+                position="top left">
+                <div>Added!</div>
+                </Popup>: <div></div>}
 
             <div className="add-button" id="goToVenue">
                 <button onClick={handleGoToVenue}>Go to venue</button>
@@ -71,3 +80,7 @@ export default function PluginGenerator({ fbUrl }) {
 // position="top center">
 // <div>Added!</div>
 // </Popup>
+
+// <div className="add-button">
+//             <button onClick={handleAddToFavourites}>Add to Favourites</button>
+//             </div> 

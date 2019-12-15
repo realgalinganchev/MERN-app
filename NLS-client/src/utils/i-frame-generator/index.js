@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../images/loaderNew.gif'
+import logo from '../../images/loader.gif'
 import './styles.css'
 
 const IFrameGenerator = ({ fbUrl }) => {

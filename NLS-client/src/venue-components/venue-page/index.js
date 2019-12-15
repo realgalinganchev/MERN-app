@@ -23,7 +23,7 @@ const VenuePage = (props) => {
 //<p id="headerName">{currentVenue.name}</p>
   return (
     currentVenue ?
-      <div style={{ backgroundImage: `url(${currentVenue.img})`, backgroundPosition: 'center', "min-height": "92vh", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+      <div style={{ backgroundImage: `url(${currentVenue.img})`, backgroundPosition: 'center', "minHeight": "92vh", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
         <div style={{ "color": "white" }}>
           
           <div id="VenueDescription">{currentVenue.description}</div>
@@ -35,7 +35,7 @@ const VenuePage = (props) => {
         <Link to="/">Go back home</Link>
       </div>
       :
-      <div>Loading...</div>
+      <div>.</div>
   )
 }
 

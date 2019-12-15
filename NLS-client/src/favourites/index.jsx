@@ -25,7 +25,7 @@ const Favourites = () => {
                     <div className="frame">
                         {favourites.map((fbUrl, i) => <IFrameGenerator fbUrl={fbUrl} key={i} />)}
                     </div> :
-                    <div>Loading...</div>
+                    <div>.</div>
             }
         </div>
     )

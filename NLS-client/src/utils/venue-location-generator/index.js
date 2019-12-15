@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../images/loader.gif'
+import logo from '../../images/loaderNew.gif'
 
 const VenueLocationGenerator = ({ geoLocation }) => {
     const [isIframeLoaded, setIsIframeLoaded] = useState(false);
